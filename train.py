@@ -60,7 +60,7 @@ test_set = test_datagen.flow_from_directory('data/test',
                                             class_mode='categorical',shuffle = True)
 classifier.fit_generator(
         training_set,
-        steps_per_epoch=580, # No of images in training set
+        steps_per_epoch=574, # No of images in training set
         epochs=40,
         validation_data=test_set,
         validation_steps=30)# No of images in test set
