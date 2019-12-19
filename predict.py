@@ -16,7 +16,7 @@ print("Loaded model from disk")
 cap = cv2.VideoCapture(0)
 
 # Category dictionary
-categories = {1: 'OKAY', 2: 'PEACE', 3: 'CLENCHED FIST', 4: 'I LOVE YOU', 5: 'THUMB UP'}
+categories = {1: 'OKAY', 2: 'PEACE', 3: 'CLENCHED FIST', 4: 'I LOVE YOU', 5: 'THUMB UP' , 6:'unknown',}
 
 while True:
     _, frame = cap.read()
@@ -48,6 +48,7 @@ while True:
                   'OKAY': result[0][2],
                   'PEACE': result[0][3],
                   'THUMB UP': result[0][4],
+                  'unknown': result[0][5] ,
                   }
     # Sorting based on top prediction
     prediction = sorted(prediction.items(), key=operator.itemgetter(1), reverse=True)
